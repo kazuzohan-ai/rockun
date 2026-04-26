@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社ROCKUN | 中小企業の軍師・経営コンサルティング</title>
+<meta name="description" content="株式会社ROCKUNは、AEO（AI執行役員）フレームワークと拡大版ファミリーオフィスで中小企業の経営を変革します。建設・医療歯科・介護・士業に特化した経営コンサルティング会社。東京都文京区。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a2463;
+    --navy-dark: #061840;
+    --navy-mid: #0e2f7a;
+    --gold: #d4a017;
+    --gold-light: #e8b82a;
+    --gold-pale: #f5e6b0;
+    --white: #ffffff;
+    --off-white: #f8f7f4;
+    --gray-light: #f0eff0;
+    --gray: #888;
+    --text: #1a1a2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(6, 24, 64, 0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212,160,23,0.3);
+    padding: 0 40px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-text {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .logo-text span { color: var(--gold); }
+
+  nav { display: flex; gap: 32px; align-items: center; }
+  nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy-dark) !important;
+    padding: 9px 22px;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+  /* ── HAMBURGER ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #0d3575 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(212,160,23,0.03) 0px,
+        rgba(212,160,23,0.03) 1px,
+        transparent 1px,
+        transparent 60px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(212,160,23,0.03) 0px,
+        rgba(212,160,23,0.03) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+  }
+
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212,160,23,0.15);
+  }
+  .hero-circle:nth-child(1) { width: 600px; height: 600px; top: -200px; right: -150px; }
+  .hero-circle:nth-child(2) { width: 400px; height: 400px; top: -100px; right: -50px; border-color: rgba(212,160,23,0.08); }
+  .hero-circle:nth-child(3) { width: 200px; height: 200px; bottom: 100px; left: 5%; border-color: rgba(212,160,23,0.1); }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+    width: 100%;
+  }
+
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(212,160,23,0.15);
+    border: 1px solid rgba(212,160,23,0.4);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    padding: 7px 18px;
+    margin-bottom: 40px;
+  }
+  .hero-label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.35;
+    margin-bottom: 24px;
+    letter-spacing: 0.03em;
+  }
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-sub {
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    color: rgba(255,255,255,0.75);
+    line-height: 2;
+    max-width: 580px;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy-dark);
+    padding: 16px 36px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,23,0.3); }
+
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: var(--white);
+    padding: 16px 36px;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 100px 0; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--navy-dark);
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .section-title.light { color: var(--white); }
+
+  .section-lead {
+    font-size: 1rem;
+    color: #555;
+    line-height: 2;
+    max-width: 680px;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--off-white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+  .about-img-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-img-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80') center/cover no-repeat;
+    opacity: 0.3;
+  }
+  .about-img-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .about-img-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.1em;
+  }
+  .about-img-logo span { color: var(--gold); }
+  .about-img-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin-top: 8px;
+  }
+
+  .about-accent-box {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    background: var(--gold);
+    padding: 24px 32px;
+    z-index: 2;
+  }
+  .about-accent-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    line-height: 1;
+  }
+  .about-accent-label {
+    font-size: 0.75rem;
+    color: var(--navy-dark);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  .about-text {}
+  .about-mission {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.8;
+    margin-bottom: 28px;
+    padding-left: 20px;
+    border-left: 3px solid var(--gold);
+  }
+  .about-body {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 2.2;
+    margin-bottom: 36px;
+  }
+
+  .about-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tag {
+    background: var(--white);
+    border: 1px solid #ddd;
+    color: var(--navy);
+    font-size: 0.8rem;
+    padding: 7px 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--navy-dark); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(212,160,23,0.15);
+    padding: 48px 40px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.3s;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.07); }
+  .service-card:hover::before { height: 100%; }
+
+  .service-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(212,160,23,0.2);
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .service-tag {
+    display: inline-block;
+    background: rgba(212,160,23,0.15);
+    border: 1px solid rgba(212,160,23,0.3);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+
+  .service-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .service-body {
+    font-size: 0.87rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 2;
+    margin-bottom: 24px;
+  }
+
+  .service-target {
+    font-size: 0.78rem;
+    color: rgba(212,160,23,0.8);
+    border-top: 1px solid rgba(212,160,23,0.2);
+    padding-top: 16px;
+  }
+
+  /* ── STRENGTHS ── */
+  #strengths { background: var(--white); }
+
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .strength-card {
+    padding: 40px 32px;
+    border: 1px solid #e8e8e8;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .strength-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 12px 40px rgba(10,36,99,0.08);
+    transform: translateY(-4px);
+  }
+
+  .strength-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+  }
+
+  .strength-num {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(10,36,99,0.05);
+    line-height: 1;
+  }
+
+  .strength-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .strength-body {
+    font-size: 0.87rem;
+    color: #555;
+    line-height: 2;
+  }
+
+  /* ── CASES ── */
+  #cases { background: var(--off-white); }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+  }
+
+  .case-card {
+    background: var(--white);
+    padding: 36px;
+    border-left: 4px solid var(--gold);
+    transition: box-shadow 0.3s;
+  }
+  .case-card:hover { box-shadow: 0 8px 32px rgba(10,36,99,0.1); }
+
+  .case-industry {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    padding: 4px 14px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .case-challenge {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .case-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .case-body {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  .case-result {
+    background: var(--navy-dark);
+    color: var(--gold);
+    font-size: 0.8rem;
+    padding: 12px 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── GREETING ── */
+  #greeting { background: var(--navy-dark); }
+
+  .greeting-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 60px;
+  }
+
+  .greeting-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .greeting-logo-box {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, var(--navy) 0%, #0d3575 100%);
+    border: 1px solid rgba(212,160,23,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .greeting-logo-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .greeting-logo-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .greeting-logo-mark {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    display: block;
+  }
+  .greeting-logo-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    margin-top: 12px;
+    display: block;
+  }
+  .greeting-name-box {
+    text-align: center;
+    width: 100%;
+  }
+  .greeting-title-label {
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+  .greeting-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .greeting-text {
+    padding-top: 8px;
+  }
+  .greeting-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1.9;
+    margin-bottom: 32px;
+    padding-left: 20px;
+    border-left: 3px solid var(--gold);
+  }
+  .greeting-body {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 2.3;
+  }
+  .greeting-sig {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .greeting-sig-company {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .greeting-sig-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── PROFILE ── */
+  #profile { background: var(--off-white); }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 60px;
+  }
+
+  .profile-photo-box {
+    position: relative;
+  }
+  .profile-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+  }
+  .profile-photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(6,24,64,0.9));
+    padding: 40px 20px 20px;
+    color: var(--white);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+  .profile-photo-label {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+
+  .profile-accent {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    z-index: -1;
+  }
+
+  .profile-info {}
+  .profile-name-en {
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .profile-name-ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 4px;
+  }
+  .profile-role {
+    font-size: 0.85rem;
+    color: #666;
+    letter-spacing: 0.1em;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .profile-block { margin-bottom: 32px; }
+  .profile-block-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+  .profile-block-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(212,160,23,0.3);
+  }
+
+  .profile-block-body {
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 2;
+  }
+
+  .achievement-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .achievement-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: #333;
+    line-height: 1.7;
+    align-items: flex-start;
+  }
+  .achievement-list li::before {
+    content: '▶';
+    color: var(--gold);
+    font-size: 0.6rem;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .theory-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .theory-tag {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.78rem;
+    padding: 8px 16px;
+    letter-spacing: 0.03em;
+  }
+
+  .book-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .book-list li { font-size: 0.85rem; color: #555; padding-left: 16px; position: relative; line-height: 1.7; }
+  .book-list li::before { content: '─'; position: absolute; left: 0; color: var(--gold); }
+
+  /* ── FAQ ── */
+  #faq { background: var(--white); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 60px;
+    max-width: 800px;
+  }
+
+  .faq-item {
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .faq-item.open { border-color: var(--gold); }
+
+  .faq-q {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 24px 28px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .faq-q:hover { background: var(--off-white); }
+
+  .faq-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--navy);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-icon { background: var(--gold); color: var(--navy-dark); }
+
+  .faq-q-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--navy-dark);
+    flex: 1;
+  }
+
+  .faq-arrow {
+    color: var(--gold);
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+  .faq-a {
+    display: none;
+    padding: 0 28px 24px 80px;
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 2;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── COMPANY ── */
+  #company { background: var(--navy-dark); }
+
+  .company-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .company-table { width: 100%; border-collapse: collapse; }
+  .company-table tr { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .company-table tr:last-child { border-bottom: none; }
+  .company-table th {
+    padding: 18px 0;
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    width: 35%;
+    text-align: left;
+    vertical-align: top;
+    padding-right: 20px;
+  }
+  .company-table td {
+    padding: 18px 0;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    vertical-align: top;
+  }
+
+  .history-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .history-item {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    align-items: flex-start;
+  }
+  .history-date {
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 500;
+    min-width: 80px;
+    letter-spacing: 0.05em;
+    padding-top: 2px;
+  }
+  .history-text {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--off-white); }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .contact-info {}
+  .contact-info-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .contact-info-body {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 2;
+    margin-bottom: 36px;
+  }
+  .contact-detail { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .contact-item-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .contact-item-text {
+    font-size: 0.88rem;
+    color: #333;
+    line-height: 1.7;
+  }
+  .contact-item-label {
+    font-size: 0.72rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .contact-form-wrap {}
+  .contact-form {
+    background: var(--white);
+    padding: 48px 40px;
+    border: 1px solid #e0e0e0;
+  }
+  .contact-form-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: var(--navy-dark);
+    margin-bottom: 32px;
+    font-weight: 600;
+  }
+
+  .form-row { margin-bottom: 20px; }
+  .form-row label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--navy);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .form-row label .req {
+    color: var(--gold);
+    margin-left: 4px;
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--white);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus { border-color: var(--navy); }
+  .form-row textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--navy-dark);
+    color: var(--gold);
+    border: none;
+    padding: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.25s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--navy); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #040f1f;
+    padding: 60px 40px 40px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.15em;
+    margin-bottom: 32px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-address {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* ── FADE IN ANIMATION ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+  .fade-in-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    header { padding: 0 20px; }
+    nav { display: none; }
+    nav.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: rgba(6,24,64,0.98);
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      z-index: 999;
+    }
+    nav.open a { font-size: 1.1rem; }
+    .hamburger { display: flex; }
+
+    .hero-content { padding: 100px 20px 60px; }
+    .hero-stats { gap: 32px; }
+
+    .about-grid,
+    .greeting-grid,
+    .profile-grid,
+    .company-grid,
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .about-accent-box { bottom: -16px; right: 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .strengths-grid { grid-template-columns: 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 20px; }
+    section { padding: 72px 0; }
+    .profile-photo-box { max-width: 320px; }
+    .contact-form { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="logo-text">株式会社<span>ROCKUN</span></div>
+  <nav id="nav">
+    <a href="#about">私たちについて</a>
+    <a href="#services">事業内容</a>
+    <a href="#profile">コンサルタント</a>
+    <a href="#company">会社概要</a>
+    <a href="#contact" class="nav-cta">無料相談</a>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-content">
+    <div class="hero-label fade-in">中小企業の軍師・経営コンサルティング</div>
+    <h1 class="hero-title fade-in fade-in-delay-1">
+      経営を「裁定」し、<br>
+      価値を<span class="gold">再定義</span>する。
+    </h1>
+    <p class="hero-sub fade-in fade-in-delay-2">
+      AEO（AI執行役員）が中小企業の意思決定を加速させる。<br>
+      1to1で絆を育む「創縁育伴」のDXで、<br>
+      あなたの会社の勝ちパターンを、共に確立します。
+    </p>
+    <div class="hero-btns fade-in fade-in-delay-3">
+      <a href="#contact" class="btn-primary">無料相談を申し込む</a>
+      <a href="#services" class="btn-outline">事業内容を見る</a>
+    </div>
+    <div class="hero-stats fade-in fade-in-delay-4">
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">独立後の年数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">専門著作・共著</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">対応業種</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2003</div>
+        <div class="stat-label">独立年</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label fade-in">About Us</div>
+    <h2 class="section-title fade-in">私たちROCKUNとは</h2>
+    <div class="about-grid">
+      <div class="about-visual fade-in">
+        <div class="about-img-box">
+          <div class="about-img-text">
+            <div class="about-img-logo">ROCK<span>UN</span></div>
+            <div class="about-img-sub">Management Consulting</div>
+          </div>
+        </div>
+        <div class="about-accent-box">
+          <div class="about-accent-num">2019</div>
+          <div class="about-accent-label">設立</div>
+        </div>
+      </div>
+      <div class="about-text fade-in fade-in-delay-1">
+        <p class="about-mission">
+          「中小企業の軍師」として、<br>
+          経営の全領域に伴走する<br>
+          プロフェッショナル集団。
+        </p>
+        <p class="about-body">
+          株式会社ROCKUNは、建設・医療歯科・介護・士業という「堅い業種」の商慣習を知り抜いた専門家チームが、経営判断の上流から実行支援の現場まで一気通貫でプロデュースする経営コンサルティング会社です。<br><br>
+          私たちが提供するのは単なる「アドバイス」ではありません。拡大版ファミリーオフィスとして、財務・法務・人事・マーケティングを横断するプロジェクトチームを組成し、社長の右腕として伴走します。<br><br>
+          そして今、AEO（AI Executive Officer）フレームワークにより、経営者の意思決定ロジックをAIに実装。中小企業に「次世代の経営インフラ」を届けています。
+        </p>
+        <div class="about-tags">
+          <span class="tag">建設業</span>
+          <span class="tag">医科歯科</span>
+          <span class="tag">介護</span>
+          <span class="tag">士業</span>
+          <span class="tag">サービス業</span>
+          <span class="tag">AEO導入</span>
+          <span class="tag">ファミリーオフィス</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label fade-in"><span style="color:var(--gold)">Services</span></div>
+    <h2 class="section-title light fade-in">事業内容</h2>
+    <p class="section-lead fade-in" style="color:rgba(255,255,255,0.6)">ROCKUNが提供する4つの専門サービス</p>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-num">01</div>
+        <div class="service-tag">経営全般の伴走支援</div>
+        <h3 class="service-title">拡大版ファミリーオフィス</h3>
+        <p class="service-body">財務・法務・人事・マーケティング——経営に必要なすべての機能をプロジェクトチームとして組成し提供します。大企業が当然のように持つ「経営参謀機能」を、中小企業にも。社長の右腕として、事業の全領域に伴走します。</p>
+        <p class="service-target">■ 対象：経営全般の強化を目指す中小企業・オーナー経営者</p>
+      </div>
+      <div class="service-card fade-in fade-in-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-tag">AI経営の最前線</div>
+        <h3 class="service-title">AEO（AI執行役員）導入支援</h3>
+        <p class="service-body">AIを「使う」時代から「経営に組み込む」時代へ。AEO（AI Executive Officer）フレームワークとは、経営者の意思決定ロジックをAIに実装し、組織の判断スピードと再現性を飛躍的に高める仕組みです。段階的かつ実践的に導入します。</p>
+        <p class="service-target">■ 対象：AI活用で経営効率化・競争優位を築きたい企業</p>
+      </div>
+      <div class="service-card fade-in fade-in-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-tag">業界特化の深い知見</div>
+        <h3 class="service-title">医科歯科・建設特化型コンサルティング</h3>
+        <p class="service-body">業界の商慣習を知らないコンサルに、本質的な課題解決はできません。医科歯科領域では診療報酬体系・集患・スタッフ定着まで、建設領域では経審・CCUS・職人採用・現場DXまで、業界特有の文脈で課題を捉え、解決します。</p>
+        <p class="service-target">■ 対象：医療法人・歯科医院・建設会社・工務店</p>
+      </div>
+      <div class="service-card fade-in fade-in-delay-3">
+        <div class="service-num">04</div>
+        <div class="service-tag">関係性から生まれる売上</div>
+        <h3 class="service-title">創縁育伴マーケティング</h3>
+        <p class="service-body">「広告を打つ」だけでは、もはや売れない時代です。ROCKUNオリジナルの「創縁育伴」メソッドは、ターゲットとの関係性を短期間で濃くし、紹介・口コミの連鎖を生み出すマーケティング構造を設計します。広告設計・ファネル構築・1to1コミュニケーション設計まで、トータルでプロデュースします。</p>
+        <p class="service-target">■ 対象：新規顧客獲得・リピート強化・紹介営業の仕組み化を目指す企業</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strengths">
+  <div class="container">
+    <div class="section-label fade-in">Why ROCKUN</div>
+    <h2 class="section-title fade-in">ROCKUNが選ばれる3つの理由</h2>
+    <div class="strengths-grid">
+      <div class="strength-card fade-in">
+        <div class="strength-icon">📊</div>
+        <div class="strength-num">01</div>
+        <h3 class="strength-title">数字で証明する、20年以上の実績</h3>
+        <p class="strength-body">独立後20年以上、建設・医療・介護・士業を中心に延べ多数の中小企業を支援。倒産会社を3年で経常利益1億円弱に再建、成長率日本一の会計事務所を軌道に乗せるなど、「結果を出す」コンサルとしての実績を積み重ねてきました。</p>
+      </div>
+      <div class="strength-card fade-in fade-in-delay-1">
+        <div class="strength-icon">📚</div>
+        <div class="strength-num">02</div>
+        <h3 class="strength-title">業界最高峰の理論的バックボーン</h3>
+        <p class="strength-body">TOC理論（Goldratt）、ランチェスター戦略、ペガサスクラブ・フランチャイズ理論、"企画の神様"高橋憲行氏の企画術——世界レベルの経営理論を実践に落とし込む力が、ROCKUNの提案の深度を支えています。</p>
+      </div>
+      <div class="strength-card fade-in fade-in-delay-2">
+        <div class="strength-icon">🤖</div>
+        <div class="strength-num">03</div>
+        <h3 class="strength-title">「AEO」という次世代の経営インフラ</h3>
+        <p class="strength-body">最新AIを活用したAEO（AI Executive Officer）フレームワークにより、経営者の判断ロジックをAIに実装。意思決定の速度と精度を同時に高める、次世代の経営インフラを中小企業に提供します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section id="network" style="background:#f4f3f0; padding:80px 0;">
+  <div class="container">
+    <div class="section-label fade-in">Our Network</div>
+    <h2 class="section-title fade-in">専門家ネットワーク体制</h2>
+    <p class="section-lead fade-in" style="margin-bottom:60px;">ROCKUNは単独のコンサルではありません。各分野の専門家が連携する「プロジェクトチーム型」の経営支援体制です。</p>
+    <div class="fade-in" style="background:#fff; border:1px solid #e0e0e0; padding:48px; max-width:900px; margin:0 auto;">
+      <!-- Center -->
+      <div style="text-align:center; margin-bottom:48px;">
+        <div style="display:inline-block; background:var(--navy-dark); color:var(--gold); padding:20px 48px; font-family:'Noto Serif JP',serif; font-size:1.2rem; font-weight:700; letter-spacing:0.1em; position:relative;">
+          株式会社ROCKUN
+          <div style="font-size:0.72rem; color:rgba(255,255,255,0.6); font-family:'Noto Sans JP',sans-serif; font-weight:400; letter-spacing:0.15em; margin-top:4px;">拡大版ファミリーオフィス</div>
+        </div>
+        <div style="width:2px; height:40px; background:var(--gold); margin:0 auto;"></div>
+        <div style="font-size:0.75rem; color:var(--gold); letter-spacing:0.15em; font-weight:500;">DSN（Dr's Solution Network）連携</div>
+      </div>
+      <!-- Network Grid -->
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; text-align:center;">
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">⚖️</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">法務</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">弁護士<br>司法書士<br>行政書士</div>
+        </div>
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">📊</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">財務・税務</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">税理士<br>公認会計士<br>FP</div>
+        </div>
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">🏥</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">医科歯科</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">医師・歯科医<br>医療経営<br>コンサルタント</div>
+        </div>
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">🏗️</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">建設・不動産</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">建設コンサル<br>不動産鑑定士<br>施工管理士</div>
+        </div>
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">💼</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">人事・労務</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">社会保険<br>労務士<br>人事コンサル</div>
+        </div>
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">📣</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">マーケティング</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">コピーライター<br>Web制作<br>広告運用</div>
+        </div>
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">🤖</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">AI・システム</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">AI実装<br>EC・システム<br>エンジニア</div>
+        </div>
+        <div style="border:1px solid #e0e0e0; padding:20px 12px;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">🌏</div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--navy); margin-bottom:4px;">業界団体</div>
+          <div style="font-size:0.72rem; color:#888; line-height:1.6;">東京NB協議会<br>中小企業<br>相互扶助協会</div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:32px; font-size:0.8rem; color:#888; line-height:2;">
+        各プロジェクトに最適な専門家を組成し、クライアント企業に提供します。<br>
+        「社長の右腕」として、経営全領域を一気通貫でカバー。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="container">
+    <div class="section-label fade-in">Case Studies</div>
+    <h2 class="section-title fade-in">支援実績・導入事例</h2>
+    <div class="cases-grid">
+      <div class="case-card fade-in">
+        <span class="case-industry">建設会社（東日本エリア）</span>
+        <div class="case-challenge">課題</div>
+        <h3 class="case-title">職人採用難・現場管理の属人化・経審スコアの低迷</h3>
+        <p class="case-body">KENSETSU OSの概念を導入し、現場DXと採用ブランディングを同時展開。経審対策と組み合わせ、公共工事受注力を強化。現場管理の標準化により、属人化リスクを解消。</p>
+        <div class="case-result">▶ 採用応募数が支援前比で増加。現場管理の工数を大幅削減。</div>
+      </div>
+      <div class="case-card fade-in fade-in-delay-1">
+        <span class="case-industry">歯科医院グループ（関東圏）</span>
+        <div class="case-challenge">課題</div>
+        <h3 class="case-title">新患獲得の頭打ち・スタッフ離職・診療報酬改定への対応</h3>
+        <p class="case-body">DSAA/DSNネットワークを活用した専門家チームを組成。MEO対策・患者コミュニケーション設計・院内オペレーション改善を並走。診療報酬の最適化も実施。</p>
+        <div class="case-result">▶ 新患数が増加。スタッフ定着率が大幅改善。</div>
+      </div>
+      <div class="case-card fade-in fade-in-delay-2">
+        <span class="case-industry">介護事業者・地域包括支援（関東圏）</span>
+        <div class="case-challenge">課題</div>
+        <h3 class="case-title">利用者獲得・地域連携の構築・スタッフの採用定着</h3>
+        <p class="case-body">「暮らしの保健室」プロジェクトを通じた地域ハブ型モデルを構築。民生委員・自治会・病院との連携網を設計・実装し、地域に根ざした集客基盤を確立。</p>
+        <div class="case-result">▶ 地域連携先を獲得。稼働率が改善。</div>
+      </div>
+      <div class="case-card fade-in fade-in-delay-3">
+        <span class="case-industry">税理士・行政書士事務所（全国）</span>
+        <div class="case-challenge">課題</div>
+        <h3 class="case-title">顧問先の減少・新規開拓の行き詰まり・差別化の困難</h3>
+        <p class="case-body">相続周り共同営業メソッドと創縁育伴マーケティングを組み合わせ、異業種との紹介ネットワークを構築。短期間で新規案件の流入経路を複数確立。</p>
+        <div class="case-result">▶ 紹介案件が増加。新規顧問契約を複数獲得。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GREETING -->
+<section id="greeting">
+  <div class="container">
+    <div class="section-label fade-in"><span style="color:var(--gold)">Message</span></div>
+    <h2 class="section-title light fade-in">代表者挨拶</h2>
+    <div class="greeting-grid">
+      <div class="greeting-visual fade-in">
+        <div class="greeting-logo-box">
+          <div class="greeting-logo-inner">
+            <span class="greeting-logo-mark">R</span>
+            <span class="greeting-logo-sub">ROCKUN Co., Ltd.</span>
+          </div>
+        </div>
+        <div class="greeting-name-box">
+          <div class="greeting-title-label">代表取締役</div>
+          <div class="greeting-name">岩下 さとみ</div>
+        </div>
+      </div>
+      <div class="greeting-text fade-in fade-in-delay-1">
+        <p class="greeting-quote">
+          「中小企業が、大企業と互角に戦える時代を——」
+        </p>
+        <p class="greeting-body">
+          株式会社ROCKUNのホームページをご覧いただき、誠にありがとうございます。代表取締役の岩下さとみでございます。<br><br>
+          当社は2019年の設立以来、「中小企業の軍師」として、建設・医療歯科・介護・士業といった、日本の産業を根底で支える業種の経営者様に伴走してまいりました。<br><br>
+          私たちが大切にしているのは、「人の成功を支援すれば、自分も成功できる」という信念です。目先の数字だけでなく、クライアント企業が持続的に成長できる「勝ちパターン」の確立を、専門家チームとともに本気で追求しています。<br><br>
+          急速に変化するビジネス環境の中、私たちはAI技術を経営に組み込むAEO（AI Executive Officer）フレームワークをはじめ、常に最新の経営手法をクライアント様にお届けすることにも力を注いでいます。<br><br>
+          どうぞお気軽にご相談ください。皆様のお役に立てますことを、心より楽しみにしております。
+        </p>
+        <div class="greeting-sig">
+          <div class="greeting-sig-company">株式会社ROCKUN</div>
+          <div class="greeting-sig-name">代表取締役　岩下 さとみ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile">
+  <div class="container">
+    <div class="section-label fade-in">Consultant</div>
+    <h2 class="section-title fade-in">マザーコンサルタント紹介</h2>
+    <div class="profile-grid">
+      <div class="profile-photo-box fade-in">
+        <div class="profile-accent"></div>
+        <!-- ↓ ここに登壇写真を配置 -->
+        <img
+          src="カンファレンス案発表-2.jpg"
+          alt="マザーコンサルタント 岩下一智"
+          class="profile-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <!-- 写真が読み込めない場合のフォールバック -->
+        <div style="display:none; width:100%; aspect-ratio:3/4; background:linear-gradient(135deg,#0a2463,#061840); flex-direction:column; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-size:0.9rem; letter-spacing:0.1em; text-align:center; padding:20px;">
+          <div style="font-size:3rem; color:var(--gold); margin-bottom:16px;">岩</div>
+          <div>岩下 一智</div>
+          <div style="font-size:0.75rem; margin-top:8px; color:rgba(255,255,255,0.35);">マザーコンサルタント</div>
+        </div>
+        <div class="profile-photo-caption">
+          <div class="profile-photo-label">Speaker</div>
+          カンファレンス登壇時
+        </div>
+      </div>
+      <div class="profile-info fade-in fade-in-delay-1">
+        <div class="profile-name-en">KAZUTOMO IWASHITA</div>
+        <div class="profile-name-ja">岩下 一智</div>
+        <div class="profile-role">マザーコンサルタント / AEO実装責任者</div>
+
+        <div class="profile-block">
+          <div class="profile-block-title">【静】20年、2万社。揺るぎない実績</div>
+          <p class="profile-block-body">
+            1964年、鹿児島県長島出身。東京の税理士試験専門学校にて簿記1級を半年で取得、税理士試験2科目を1年で突破。公認会計士事務所勤務・記帳代行会社経営を経て、2003年に経営コンサルタントとして独立。独立後20年以上、一貫してクライアントの「勝ちパターン確立」に注力してきた。
+          </p>
+        </div>
+
+        <div class="profile-block">
+          <div class="profile-block-title">主な実績</div>
+          <ul class="achievement-list">
+            <li>20,000社クライアントを持つ上場コンサル会社のマザーコンサルとして、商品開発・コンサルタント育成・品質管理を担当</li>
+            <li>司法書士の全国ネットワークを組織化（都市銀行との連携）</li>
+            <li>成長率日本一の会計事務所を成長軌道に乗せる</li>
+            <li>倒産会社を3年で経常利益1億円弱に再建</li>
+            <li>1.5年でMDRT獲得者十数名を輩出</li>
+          </ul>
+        </div>
+
+        <div class="profile-block">
+          <div class="profile-block-title">理論的バックボーン（師事）</div>
+          <div class="theory-tags">
+            <span class="theory-tag">高橋憲行氏：企画術</span>
+            <span class="theory-tag">Goldratt：TOC理論</span>
+            <span class="theory-tag">井崎貴富氏：ペガサスクラブ</span>
+            <span class="theory-tag">竹花利明氏：ランチェスター戦略</span>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <div class="profile-block-title">【動】現在進行形のプロジェクト</div>
+          <p class="profile-block-body">
+            現在はKENSETSU OS（建設業界向け経営OS）、DSAA/DSN（医科歯科支援ネットワーク）、AEO（AI Executive Officer）フレームワークの3プロジェクトを同時並行で推進中。AI時代における中小企業の競争力強化を、実装レベルで支援し続けている。
+          </p>
+        </div>
+
+        <div class="profile-block">
+          <div class="profile-block-title">著書・共著</div>
+          <ul class="book-list">
+            <li>「病院経営の強化と財産形成」（ぎょうせい・共著）</li>
+            <li>「よくわかるバランスシート」（オーエス出版・共著）</li>
+            <li>「新時代病医院のチェックと対策」（萬有製薬・共著）</li>
+            <li>「増販増客実例集2001」（企画塾出版部・監修）</li>
+          </ul>
+        </div>
+
+        <div class="profile-block">
+          <div class="profile-block-title">所属団体・役職</div>
+          <ul class="achievement-list">
+            <li>一般社団法人 東京ニュービジネス協議会（The Tokyo New Business Conference）会員</li>
+            <li>一般社団法人 中小企業相互扶助協会 会員</li>
+            <li>一般財団法人 経営者支援学会 理事（2026年4月1日就任）</li>
+          </ul>
+        </div>
+
+        <div class="profile-block">
+          <div class="profile-block-title">【志】「中小企業の軍師」としての使命</div>
+          <p class="profile-block-body" style="font-style:italic; color:var(--navy); font-weight:500;">
+            「人の成功を支援すれば、自分も成功できる。」<br>
+            この一言が、20年以上のコンサルタント人生を貫く信念です。中小企業の経営者が、大企業と互角に戦える武器と戦略を持つこと——それを実現するために、ROCKUNは存在します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label fade-in">FAQ</div>
+    <h2 class="section-title fade-in">よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item fade-in">
+        <div class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-q-text">相談だけでも対応していただけますか？</div>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a">はい。初回のご相談は無料で承っております。貴社の現状をお聞きし、最適な支援内容をご提案いたします。まずはお気軽にお問い合わせください。</div>
+      </div>
+      <div class="faq-item fade-in fade-in-delay-1">
+        <div class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-q-text">対応エリアはどこですか？</div>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a">主に東京・関東圏を中心に対応しておりますが、オンラインでの対応も積極的に行っておりますので、全国どこからでもご相談いただけます。</div>
+      </div>
+      <div class="faq-item fade-in fade-in-delay-2">
+        <div class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-q-text">中小企業でも導入できますか？費用感を教えてください。</div>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a">はい、中小企業・小規模事業者様が主なクライアントです。支援内容・規模に応じてプランをカスタマイズしており、まずは無料相談にてご要望とご予算をお聞かせください。</div>
+      </div>
+      <div class="faq-item fade-in fade-in-delay-3">
+        <div class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-q-text">AEO（AI執行役員）導入に、IT知識は必要ですか？</div>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a">必要ありません。ROCKUNがAIツールの選定・設定・運用定着まで伴走しますので、経営者様はAIの「成果」に集中していただければ大丈夫です。</div>
+      </div>
+      <div class="faq-item fade-in">
+        <div class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-q-text">契約期間の縛りはありますか？</div>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a">案件・プランによって異なりますが、短期スポット型から長期伴走型まで柔軟に設計しております。まずはご相談の中で最適な形をご提案いたします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="container">
+    <div class="section-label fade-in"><span style="color:var(--gold)">Company</span></div>
+    <h2 class="section-title light fade-in">会社概要</h2>
+    <div class="company-grid">
+      <div class="fade-in">
+        <table class="company-table">
+          <tr><th>社名</th><td>株式会社ROCKUN</td></tr>
+          <tr><th>代表取締役</th><td>岩下さとみ</td></tr>
+          <tr><th>設立</th><td>2019年9月24日</td></tr>
+          <tr><th>資本金</th><td>300万円</td></tr>
+          <tr><th>所在地</th><td>〒112-0011<br>東京都文京区千石3-29-24<br>山口第二ビル501号室</td></tr>
+          <tr><th>電話</th><td>03-5810-1828</td></tr>
+          <tr><th>E-mail</th><td>info@zohan.jp</td></tr>
+          <tr><th>事業内容</th><td>経営コンサルティング<br>AEO（AI Executive Officer）導入支援<br>拡大版ファミリーオフィス型経営支援<br>医科歯科・建設業特化型コンサルティング<br>広告・ファネル設計・マーケティング支援</td></tr>
+          <tr><th>主要対応業種</th><td>建設業・医科歯科・介護<br>士業・サービス業</td></tr>
+          <tr><th>法人番号</th><td>5010001204180</td></tr>
+          <tr><th>主要取引銀行</th><td>三井住友銀行 巣鴨支店<br>巣鴨信用金庫 本店営業部</td></tr>
+          <tr><th>所在地MAP</th><td>
+            <div style="margin-top:6px;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12957.239134928726!2d139.7412862216646!3d35.7185991326346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d59ca1b67ff%3A0xe87bdae7c9e2628!2z5bGx5Y-j56ysMuODk-ODqw!5e0!3m2!1sja!2sjp!4v1777195108542!5m2!1sja!2sjp" width="100%" height="150" style="border:0; display:block; filter:invert(85%) hue-rotate(180deg) brightness(0.9);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </td></tr>
+        </table>
+      </div>
+      <div class="fade-in fade-in-delay-1">
+        <p style="color:var(--gold); font-size:0.75rem; letter-spacing:0.2em; margin-bottom:24px; font-weight:500;">HISTORY</p>
+        <ul class="history-list">
+          <li class="history-item">
+            <span class="history-date">2019.09</span>
+            <span class="history-text">ネット通販事業として株式会社押川商店を設立</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2020.05</span>
+            <span class="history-text">主業務を経営コンサルティングに転換。商号を株式会社ROCKUNに変更、代表取締役を岩下さとみに変更。マザーコンサルタントとして岩下一智を招聘。</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2020.06</span>
+            <span class="history-text">業容拡大のため日本橋に移転</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2021.02</span>
+            <span class="history-text">経営理念・管理会計の第一人者、平本靖夫氏を取締役に招聘。増資。</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2021.03</span>
+            <span class="history-text">業容拡大のため文京区に移転</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2025.01</span>
+            <span class="history-text">暮らしの保健室プロジェクト始動</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2025.07</span>
+            <span class="history-text">JK松本塾プロジェクト始動</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2025.08</span>
+            <span class="history-text">本店所在地を現在地に移転</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2026.01</span>
+            <span class="history-text">DSAA/DSN医科歯科支援プロジェクト始動</span>
+          </li>
+          <li class="history-item">
+            <span class="history-date">2026.04</span>
+            <span class="history-text">3,300万人規模の教育・広告プラットフォーム開発着手。デジタル事業領域を本格拡張。</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label fade-in">Contact</div>
+    <h2 class="section-title fade-in">まずは、無料相談からはじめましょう。</h2>
+    <div class="contact-inner">
+      <div class="contact-info fade-in">
+        <p class="contact-info-title">「うちの会社に合う支援なのか？」<br>そのご不安、まずはお話をお聞かせください。</p>
+        <p class="contact-info-body">初回相談は完全無料。課題をお伺いし、ROCKUNができることを率直にお伝えします。</p>
+        <div class="contact-detail">
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">所在地</span>
+              〒112-0011 東京都文京区千石3-29-24<br>山口第二ビル501号室
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">電話番号</span>
+              03-5810-1828
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">メール</span>
+              info@zohan.jp
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-in fade-in-delay-1">
+        <div class="contact-form">
+          <div class="contact-form-title">無料相談フォーム</div>
+          <form action="mailto:info@zohan.jp" method="POST" enctype="text/plain">
+            <div class="form-row">
+              <label>会社名 <span class="req">*</span></label>
+              <input type="text" name="company" required placeholder="株式会社○○">
+            </div>
+            <div class="form-row">
+              <label>お名前 <span class="req">*</span></label>
+              <input type="text" name="name" required placeholder="山田 太郎">
+            </div>
+            <div class="form-row">
+              <label>メールアドレス <span class="req">*</span></label>
+              <input type="email" name="email" required placeholder="sample@example.com">
+            </div>
+            <div class="form-row">
+              <label>電話番号</label>
+              <input type="tel" name="tel" placeholder="03-0000-0000">
+            </div>
+            <div class="form-row">
+              <label>業種 <span class="req">*</span></label>
+              <select name="industry" required>
+                <option value="">選択してください</option>
+                <option value="建設業">建設業</option>
+                <option value="医科歯科">医科歯科</option>
+                <option value="介護">介護</option>
+                <option value="士業">士業</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>ご相談内容</label>
+              <textarea name="message" placeholder="お気軽にご記入ください"></textarea>
+            </div>
+            <button type="submit" class="form-submit">無料相談を申し込む →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ROCK<span>UN</span></div>
+  <div class="footer-tagline">中小企業の軍師・経営コンサルティング</div>
+  <div class="footer-links">
+    <a href="#" onclick="document.getElementById('privacy').style.display='block'; return false;">プライバシーポリシー</a>
+    <a href="#" onclick="document.getElementById('tokusho').style.display='block'; return false;">特定商取引法に基づく表記</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+  <div class="footer-address">
+    〒112-0011 東京都文京区千石3-29-24 山口第二ビル501号室<br>
+    TEL：03-5810-1828 ｜ info@zohan.jp
+  </div>
+  <div class="footer-copy">© 2019 株式会社ROCKUN All Rights Reserved.</div>
+</footer>
+
+<!-- PRIVACY MODAL -->
+<div id="privacy" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; overflow-y:auto; padding:40px 20px;">
+  <div style="max-width:700px; margin:0 auto; background:#fff; padding:60px 48px; position:relative;">
+    <button onclick="document.getElementById('privacy').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999;">✕</button>
+    <h2 style="font-family:'Noto Serif JP',serif; color:#0a2463; margin-bottom:32px; font-size:1.4rem;">プライバシーポリシー</h2>
+    <p style="font-size:0.88rem; line-height:2.2; color:#444;">
+      株式会社ROCKUN（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、以下の方針に基づき適切に管理・保護いたします。<br><br>
+      <strong>1. 個人情報の収集</strong><br>
+      当社は、お問い合わせ・ご相談の際に、氏名・会社名・メールアドレス・電話番号等の個人情報をご提供いただく場合があります。<br><br>
+      <strong>2. 利用目的</strong><br>
+      収集した個人情報は、ご相談への対応、当社サービスのご案内、その他当社業務の遂行に利用いたします。<br><br>
+      <strong>3. 第三者への提供</strong><br>
+      法令に基づく場合を除き、お客様の同意なく第三者に個人情報を提供することはありません。<br><br>
+      <strong>4. 安全管理</strong><br>
+      個人情報への不正アクセス、紛失、破壊、改ざん、漏洩等を防止するため、適切な安全管理措置を講じます。<br><br>
+      <strong>5. お問い合わせ</strong><br>
+      個人情報に関するお問い合わせは info@zohan.jp までご連絡ください。<br><br>
+      株式会社ROCKUN　代表取締役 岩下さとみ
+    </p>
+  </div>
+</div>
+
+<!-- TOKUSHO MODAL -->
+<div id="tokusho" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; overflow-y:auto; padding:40px 20px;">
+  <div style="max-width:700px; margin:0 auto; background:#fff; padding:60px 48px; position:relative;">
+    <button onclick="document.getElementById('tokusho').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999;">✕</button>
+    <h2 style="font-family:'Noto Serif JP',serif; color:#0a2463; margin-bottom:32px; font-size:1.4rem;">特定商取引法に基づく表記</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; width:35%; text-align:left; vertical-align:top;">事業者名</th><td style="padding:16px 0; color:#333; line-height:1.8;">株式会社ROCKUN</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">代表責任者</th><td style="padding:16px 0; color:#333; line-height:1.8;">岩下さとみ</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">所在地</th><td style="padding:16px 0; color:#333; line-height:1.8;">〒112-0011 東京都文京区千石3-29-24 山口第二ビル501号室</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">電話番号</th><td style="padding:16px 0; color:#333; line-height:1.8;">03-5810-1828</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">メール</th><td style="padding:16px 0; color:#333; line-height:1.8;">info@zohan.jp</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">サービス内容</th><td style="padding:16px 0; color:#333; line-height:1.8;">経営コンサルティング、AI導入支援、マーケティング支援</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">料金</th><td style="padding:16px 0; color:#333; line-height:1.8;">個別見積もりによる（初回相談無料）</td></tr>
+      <tr style="border-bottom:1px solid #eee;"><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">支払方法</th><td style="padding:16px 0; color:#333; line-height:1.8;">銀行振込（契約時に別途ご案内）</td></tr>
+      <tr><th style="padding:16px 0; color:#666; text-align:left; vertical-align:top;">キャンセル</th><td style="padding:16px 0; color:#333; line-height:1.8;">契約書記載の条件に準じます。詳細はお問い合わせください。</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  // Fade in on scroll
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Hero elements visible immediately
+  document.querySelectorAll('#hero .fade-in').forEach(el => {
+    setTimeout(() => el.classList.add('visible'), 100);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Smooth header shrink
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+      header.style.height = '60px';
+    } else {
+      header.style.height = '70px';
+    }
+  });
+</script>
+</body>
+</html>
